@@ -1,0 +1,220 @@
+learntocodegitgithub.txt
+====================================================================================================
+https://www.meetup.com/Learn-Code-Seattle/events/253466429/
+Learn to Code Workshop: Intro to Git and GitHub
+Hosted by Sage Elliott
+From Learn to Code Seattle
+Wednesday, September 19, 2018 6:30 PM to 8:30 PM
+Galvanize 111 S. Jackson St.
+https://www.eventbrite.com/e/learn-to-code-seattle-intro-to-git-github919-tickets-48806524629
+
+In this Learn to Code workshop, you’ll learn the essentials of Git, the most common version control tool that millions of coders use while developing for the web. We will also learn how to use Github, a popular Git-based repository to host your projects online.
+
+What You’ll Learn:
+• How to create and work in a local repository
+• How to work remotely using GitHub (push and pull)
+
+How to Prepare:
+– Bring your laptop, fully charged (bring your charger just in case)
+– Install Git: http://git-scm.com/downloads
+– Install GitHub Desktop: https://desktop.github.com/
+– Install the Atom text editor if you don’t have a text editor. Go here: https://atom.io/
+– Install Google Chrome (any browser will do, but Chrome can do some cool things): https://www.google.com/chrome/browser/desktop/
+
+Prerequisites: None, but it would be helpful to have previously completed our HTML and CSS workshops.
+====================================================================================================
+https://git-scm.com/downloads
+
+DO READ ==> https://git-scm.com/about
+
+DO GET or GOT == > https://git-scm.com/doc
+https://git-scm.com/book
+https://git-scm.com/docs/user-manual.html Version 2.19.0
+http://ndpsoftware.com/git-cheatsheet.html
+
+https://git-scm.com/downloads
+Latest source Release 2.19.0
+Release Notes (2018-09-10)
+Download 2.19.0 for Windows
+released on 2018-09-13
+
+https://desktop.github.com/
+https://help.github.com/desktop/
+https://help.github.com/desktop/guides/getting-started-with-github-desktop/
+
+https://atom.io/ 1.30.0
+https://atom.io/docs
+https://atom.io/docs/api/v1.30.0/AtomEnvironment
+https://flight-manual.atom.io/
+====================================================================================================
+git.sage.codes  --> https://github.com/sagecodes/intro-git-github 
+About me: Hello I'm Sage Elliott. I'm a Technology Evangelist here at Galvanize! Previously I've worked as a software and hardware engineer with Startups and Agencies in Seattle, WA and Melbourne, FL. I love technology! I'm currently learning more about building AI and VR projects.
+
+If you have an event you would like to see or put on let me know! I'm always looking for ideas.
+
+Website: sageelliott.com
+Twitter: @sagecodes
+LinkedIn: sageelliott
+Email: sage.elliott@galvanize.com
+====================================================================================================
+In this workshop at a minimum we should be learn to:
+
+Create a git repo
+understand the git stage cycle
+add changes to the repo
+create repo on github
+push our repo up onto github
+push changes onto github
+pull changes from github
+clone a repo from github to our machine
+====================================================================================================
+https://code.visualstudio.com/
+==> C:\Users\Viv\AppData\Local\Programs\Microsoft VS Code
+https://code.visualstudio.com/docs/?dv=win
+https://code.visualstudio.com/docs?start=true
+====================================================================================================
+We're going to to use our terminal / command line. One windows you should us the git bash program that got installed when you followed the setup section.
+
+a few terminal commands we will want to remember.
+
+cd change directory
+cd foldername moves you into the folder you specify [[tab is autocomplete]]
+cd .. moves you back one folder
+ls List items in folder
+ls -a List all items (even hidden files)
+How to exit terminal text editors (DONT GET STUCK)
+[[ctrl-L to clear screen]]
+
+nano ctr + x ctr + o(save & exit)
+vi/vim :q(exit) :wq(save & exit)
+Setup
+We should do this before we start using git
+
+git config --global user.email "name@email.com"
+
+git config --global user.name "FirstName LastName"
+
+[[git config --list]]
+
+[[touch README.md
+then ls will show it]]
+
+First commit
+git init
+git add .
+git status
+git commit -m"Commit Message"
+You just made your first commit!
+
+sometimes you don't want to add every file like the git add . command does. Instead you may want to only commit specific files. You can use git add filename.file command. replace "filename.file" with the actual name of your file.
+
+Other ways to commit
+This adds all and commits in one line
+
+git commit -a -m "message"
+
+this will add the files or folders specified and commit on a separate line
+
+git add file`
+git commit -m "message"
+git commit messages
+You can type in whatever you want in your commit messages, but you should make sure they're clear what was changed / added. When you start working somewhere its common for there to be a standard format to follow.
+
+First Commit Analysis
+So what happened in our first commit? 3 stages of git
+
+Modified (When we used git status and saw it red)
+staging (When we used git status and saw it green)
+committed
+lets make a small change to our file
+
+git status
+git add .
+git commit -m"message"
+Lets see what commits we have made so far!
+
+git log shows the history of commits
+git log -p shows more details about the latest commit
+(press q to get back to bash prompt)
+
+Undo staging
+git reset HEAD will pull all the files out of staging
+git reset HEAD filename.file this will pull the file out staging
+Git Diff
+git diff a quick way to check differences in your terminal
+Remove and move
+git rm filename.file git mv filename.file filenamechange.file
+
+Discarding Changes
+git checkout -- filename.file
+Similarly we can use this command to bring back a deleted file git checkout -- deletedFileName.file
+
+Revert
+git revert cbb60c825aa5b0a1b3c7804de2fe6378c428bfd2
+
+Branches
+git branch branchname Creates a new branch (does not switch to it)
+
+git checkout branchname Switches to branch specified
+
+merging
+Before merging make sure you are on the branch you want to merge your changes INTO. check what branch you're in with git branch
+
+git merge branchname merges the branch specified into the current you're on.
+
+Git out of here!
+.gitignore
+
+You may want to always exclude some files or folders. You can include them in a .gitignore file and they wont be added!
+
+Git squashed
+Squashing a commit is common in work environments. Think of this add merging a set of commits in to one commit instead of leaving many that you probably did while working on a feature.
+
+git rebase -i origin/master use f on commits to change to fixup
+
+r to reword commit message i to enter interactive mode in vim esc to get back to where to exit :wq (enter)
+
+git push origin featureBranch --force commit will need to be forced since history was rewritten
+
+Git Shared with Github
+git clone https://github.com/sagecodes/intro-git-github
+git remote add origin github_url
+git push -u origin master
+git push origin branchname
+Simple Pull Request Workflow
+Fork Repo you want to change (you wont always need to fork, if repo is already in your org / account)
+Clone your repo
+Make your changes
+Commit / Push
+Click "Pull Request"
+Give description of Pull Request
+Choose Correct branch you want to merge to
+Review your commits / change logs (red = deleted green modified / added)
+Send pull request
+owner will usually leave comment or do code review
+Then they may merge branches by clicking confirm merge request
+You may want to update from the original repo
+
+git remote add upstream git:Original_URL git fetch upstream git pull upstream master
+
+====================================================================================================
+More Resources:
+Pro Git    https://git-scm.com/book/en/v2
+Sage's git command cheatsheet    http://sageelliott.com/git-github-commands/
+Treehouse    https://teamtreehouse.com/library/introduction-to-git
+Git Documentation    https://git-scm.com/doc
+Git School Visualization    http://git-school.github.io/visualizing-git/
+Datacamp    https://www.datacamp.com/courses/introduction-to-git-for-data-science
+====================================================================================================
+Upcoming Events!
+Join us on Meetup: Learn to Code Meetup    https://www.meetup.com/Learn-Code-Seattle/
+Hack the Machine Free 3 hackathon - this weekend!    https://www.eventbrite.com/e/hackthemachine-seattle-registration-48019112458
+Intro to HTML & CSS - Thursday, September 27, 2018 6:30 PM to 8:30 PM    https://www.meetup.com/Learn-Code-Seattle/events/253466466/
+Intro to JavaScript - Thursday, October 4, 2018 6:30 PM to 8:30 PM    https://www.meetup.com/Learn-Code-Seattle/events/253466491/
+Code Hours - Tuesday, September 25, 2018 6:30 PM to 8:30 PM    https://www.meetup.com/Learn-Code-Seattle/events/mnlqdqyxmbhc/
+Intro to Machine Learning - Thursday, October 18, 2018 6:30 PM to 8:30 PM    https://www.meetup.com/Learn-Code-Seattle/events/253466541/
+====================================================================================================
+
+
+====================================================================================================
+====================================================================================================
