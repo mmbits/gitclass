@@ -101,21 +101,23 @@ then ls will show it]]
 
 First commit
 git init
+[[git status]]
 git add .
 git status
-git commit -m"Commit Message"
+git commit -m"Commit Message" [[usu: Initial Commit]]
 You just made your first commit!
+[[first stage: nothing tracked nothing committed
+then...]]
 
 sometimes you don't want to add every file like the git add . command does. Instead you may want to only commit specific files. You can use git add filename.file command. replace "filename.file" with the actual name of your file.
 
 Other ways to commit
 This adds all and commits in one line
 
-git commit -a -m "message"
-
+git commit -a -m "message" 
 this will add the files or folders specified and commit on a separate line
 
-git add file`
+git add file`[[the exact filename]]
 git commit -m "message"
 git commit messages
 You can type in whatever you want in your commit messages, but you should make sure they're clear what was changed / added. When you start working somewhere its common for there to be a standard format to follow.
